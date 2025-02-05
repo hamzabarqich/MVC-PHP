@@ -14,28 +14,31 @@
         $stagiaires = $pdo->query('SELECT * FROM stagiaire')->fetchAll(mode: PDO::FETCH_OBJ);
     ?>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Age</th>
-            <th>Login</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($stagiaires as $stagiaire): ?>
-            <tr>
-                <td><?php echo $stagiaire->id ?></td>
-                <td><?php echo $stagiaire->nom ?></td>
-                <td><?php echo $stagiaire->prenom ?></td>
-                <td><?php echo $stagiaire->age ?></td>
-                <td><?php echo $stagiaire->login ?></td>
-            </tr>
-         <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="container mt-2">
+        <h2>Liste des stagiaires</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Age</th>
+                <th>Login</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($stagiaires as $stagiaire): ?>
+                <tr>
+                    <td><?php echo $stagiaire->id ?></td>
+                    <td><?php echo $stagiaire->nom ?></td>
+                    <td><?php echo $stagiaire->prenom ?></td>
+                    <td><?php echo $stagiaire->age ?></td>
+                    <td><?php echo $stagiaire->login ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
