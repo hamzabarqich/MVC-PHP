@@ -3,7 +3,8 @@ $title = "Liste des stagiaires";
 
 ob_start(); // from here we want to start recovering html below to $content variable
 ?>
-
+<hr>
+<div id="ajouter"><a href="create.php" class="btn btn-primary">Ajouter</a></div>
 <table class="table table-striped">
     <thead>
         <tr>
