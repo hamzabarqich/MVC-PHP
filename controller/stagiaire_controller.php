@@ -15,8 +15,7 @@ function createAction()
 function storeAction()
 {
     $isCreated = create();
-    var_dump($isCreated);
-    //(header:'location:index.php');
+    header('location: index.php');
 }
 
 function editAction()

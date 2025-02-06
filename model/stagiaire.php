@@ -9,7 +9,7 @@ function database_connection()
 function latest()
 {
     $pdo = database_connection();
-    return $pdo->query('SELECT * FROM stagiaire ORDER BY id DESC')->fetchAll(mode: PDO::FETCH_OBJ);
+    return $pdo->query('SELECT * FROM stagiaire ORDER BY id')->fetchAll(mode: PDO::FETCH_OBJ);
 }
 
 function create()

@@ -9,6 +9,7 @@
     <title><?= $title ?></title>
 </head>
 <body>
+<?php require_once 'include/nav.php' ?>
     <div class="container mt-2">
         <h2><?= $title ?></h2>
         <?= $content ?>
