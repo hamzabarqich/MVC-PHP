@@ -8,9 +8,9 @@
     <title><?= $title ?></title>
 </head>
 <body>
-<div class="container mt-2">
+    <div class="container mt-2">
         <h2><?= $title ?></h2>
+        <?= $content ?>
     </div>
-
 </body>
 </html>
