@@ -1,16 +1,20 @@
 
 <!-- Nav tabs -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="#">Hello-World!!</a>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav" id="navId">
-    <li class="nav-item">
-        <a href="index.php" class="nav-link active">Liste des stagiaires</a>
-    </li>
-    <li class="nav-item">
-        <a href="create.php" class="nav-link">Ajouter stagiaire</a>
-    </li>
-</ul>
-</div>
-</nav>
 
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.php">Liste des stagiaires</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="create.php">Ajouter stagiaire</a>
+      </ul>
+    </div>
+  </div>
+</nav>

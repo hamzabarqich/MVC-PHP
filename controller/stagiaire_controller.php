@@ -23,6 +23,11 @@ function editAction()
 
 }
 
+function deleteAction()
+{
+    require_once 'views/delete.php';
+}
+
 function destroyAction()
 {
 
