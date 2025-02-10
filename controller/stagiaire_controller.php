@@ -20,7 +20,16 @@ function storeAction()
 
 function editAction()
 {
+    $id = $_GET['id'];
+    $stagiaire = view($id);
+    require_once 'views/edit.php';
+}
 
+function updateAction()
+{
+    extract(array: $_POST);
+    edit($id, $nom, $prenom, $age, $login, $password);
+    header('location: index.php');
 }
 
 function deleteAction()

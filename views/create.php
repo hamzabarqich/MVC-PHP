@@ -32,5 +32,6 @@ ob_start(); // from here we want to start recovering html below to $content vari
 
     </form>
 
+
 <?php $content = ob_get_clean();  // here we stop and recovered all html above to $content variable   ?>  
 <?php include_once 'views/layout.php'; ?>

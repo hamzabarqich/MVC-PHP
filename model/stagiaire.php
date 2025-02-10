@@ -23,9 +23,11 @@ function create()
 }
 
 // This function to can modify the trainees
-function edit()
+function edit($id, $nom, $prenom, $age, $login, $password)
 {
-
+    $pdo = database_connection();
+    $sqlState = $pdo->prepare(query:"UPDATE stagiaire SET nom = ?, prenom = ?, age = ?, login = ?, password = ?  WHERE id = ?");
+     return $sqlState->execute([$nom, $prenom, $age, $login, $password, $id]);
 }
 
 // This function to delete trainees by id
@@ -36,3 +38,11 @@ function destroy($id)
     return $sqlState->execute([$id]);
 }
 
+// This function to modify trainees by id
+function view($id)
+{
+    $pdo = database_connection();
+    $sqlState = $pdo->prepare("SELECT * FROM stagiaire WHERE id = ?");
+    $sqlState->execute([$id]);
+    return $sqlState->fetch(mode: PDO::FETCH_OBJ);
+}
