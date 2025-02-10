@@ -25,10 +25,13 @@ function editAction()
 
 function deleteAction()
 {
+    $id = $_GET['id'];
     require_once 'views/delete.php';
 }
 
 function destroyAction()
 {
-
+    $id = $_GET['id'];
+    destroy($id);
+    header('location: index.php');
 }

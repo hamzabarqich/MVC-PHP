@@ -25,18 +25,15 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <td><?= $stagiaire->age ?></td>
                 <td><?= $stagiaire->login ?></td>
                 <td>
-                    <!-- <a href="delete.php?id=<?= $stagiaire->id ?>"  class="btn btn-danger btn-sm">Supprimer</a> -->
+                <!-- Your Delete Button that triggers the modal -->
+                    <a href="#" id="myBtn" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>" data-id="<?= $stagiaire->id ?>">Supprimer</a>
 
-
-                <!-- Your Delete Button -->
-                    <a href="#" id="myBtn" class="btn btn-danger btn-sm" data-id="<?= $stagiaire->id ?>" data-bs-toggle="modal" data-bs-target="#deleteModal">Supprimer</a>
-
-                <!-- Modal for Confirmation -->
-                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <!-- Modal for Confirmation with a unique ID for each stagiaire -->
+                <div class="modal fade" id="deleteModal<?= $stagiaire->id ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $stagiaire->id ?>" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Confirmer la suppression</h5>
+                        <h5 class="modal-title" id="deleteModalLabel<?= $stagiaire->id ?>">Confirmer la suppression</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -44,15 +41,11 @@ ob_start(); // from here we want to start recovering html below to $content vari
                     </div>
                     <div class="modal-footer">
                         <a href="index.php"  class="btn btn-secondary">Annuler</a>
-                        <a href="destroy.php" id="confirmDelete" class="btn btn-danger">Supprimer</a>
+                        <a href="destroy.php?id=<?= $stagiaire->id ?>" id="confirmDelete<?= $stagiaire->id ?>" class="btn btn-danger">Supprimer</a>
                     </div>
                     </div>
                 </div>
                 </div>
-
-                <!-- Link to external JS file -->
-                <script src="/views/scripts.js"></script>
-
                 </td>
             </tr>
 
