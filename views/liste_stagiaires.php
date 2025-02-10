@@ -26,22 +26,22 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <td><?= $stagiaire->login ?></td>
                 <td>
                 <!-- Your Delete Button that triggers the modal -->
-                    <a href="#" id="myBtn" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>" data-id="<?= $stagiaire->id ?>">Supprimer</a>
+                    <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>">Supprimer</a>
 
                 <!-- Modal for Confirmation with a unique ID for each stagiaire -->
-                <div class="modal fade" id="deleteModal<?= $stagiaire->id ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?= $stagiaire->id ?>" aria-hidden="true">
+                <div class="modal fade" id="deleteModal<?= $stagiaire->id ?>" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel<?= $stagiaire->id ?>">Confirmer la suppression</h5>
+                        <h5 class="modal-title">Confirmer la suppression</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         Êtes-vous sûr de vouloir supprimer cet élément ?
                     </div>
                     <div class="modal-footer">
-                        <a href="index.php"  class="btn btn-secondary">Annuler</a>
-                        <a href="destroy.php?id=<?= $stagiaire->id ?>" id="confirmDelete<?= $stagiaire->id ?>" class="btn btn-danger">Supprimer</a>
+                        <a href="index.php" class="btn btn-secondary">Annuler</a>
+                        <a href="destroy.php?id=<?= $stagiaire->id ?>"  class="btn btn-danger">Supprimer</a>
                     </div>
                     </div>
                 </div>
@@ -49,7 +49,6 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 </td>
             </tr>
 
-    
         <?php endforeach; ?>
     </tbody>
 </table>
