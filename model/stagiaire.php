@@ -18,16 +18,16 @@ function latest()
 function create()
 {
     $pdo = database_connection();
-    $sqlState = $pdo->prepare("INSERT INTO stagiaire VALUES(null, ?, ?, ?, ?, ?)");
-    return $sqlState->execute([$_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['login'], $_POST['password']]);
+    $sqlState = $pdo->prepare("INSERT INTO stagiaire VALUES(null, ?, ?, ?, ?, ?, ?)");
+    return $sqlState->execute([$_POST['nom'], $_POST['prenom'], $_POST['age'], $_POST['login'], $_POST['password'], $_POST['commentaire']]);
 }
 
 // This function to can modify the trainees
-function edit($id, $nom, $prenom, $age, $login, $password)
+function edit($id, $nom, $prenom, $age, $login, $password, $commentaire)
 {
     $pdo = database_connection();
-    $sqlState = $pdo->prepare(query:"UPDATE stagiaire SET nom = ?, prenom = ?, age = ?, login = ?, password = ?  WHERE id = ?");
-     return $sqlState->execute([$nom, $prenom, $age, $login, $password, $id]);
+    $sqlState = $pdo->prepare(query:"UPDATE stagiaire SET nom = ?, prenom = ?, age = ?, login = ?, password = ?, commentaire = ?  WHERE id = ?");
+     return $sqlState->execute([$nom, $prenom, $age, $login, $password, $commentaire, $id]);
 }
 
 // This function to delete trainees by id

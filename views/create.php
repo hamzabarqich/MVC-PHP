@@ -27,7 +27,12 @@ ob_start(); // from here we want to start recovering html below to $content vari
             <input type="password" class="form-control" name="password" id="password" placeholder="Saisir votre mot de passe" minlength="8" maxlength="20" required>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-success my-2" value="Ajouter" name="ajouter">
+            <label for="commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary my-2" value="Ajouter" name="ajouter">
+            <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
         </div>
 
     </form>

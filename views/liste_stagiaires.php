@@ -4,15 +4,17 @@ $title = "Liste des stagiaires";
 ob_start(); // from here we want to start recovering html below to $content variable
 ?>
 <hr>
-<div id="ajouter"><a href="create.php" class="btn btn-primary">Ajouter</a></div>
+<div id="ajouter"><a href="index.php?action=create" class="btn btn-primary">Ajouter stagiaire</a></div>
+<br>
 <table class="table table-striped">
-    <thead>
+    <thead class="table-dark">
         <tr>
             <th>Id</th>
             <th>Nom</th>
             <th>Prénom</th>
             <th>Age</th>
             <th>Login</th>
+            <th>Commentaire</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -24,10 +26,13 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <td><?= $stagiaire->prenom ?></td>
                 <td><?= $stagiaire->age ?></td>
                 <td><?= $stagiaire->login ?></td>
+                <td><?= $stagiaire->commentaire ?></td>
                 <td>
                 <!-- Your Delete and Modify Button that triggers the modal -->
+                <div class="d-flex flex-wrap gap-1 justify-content">
                     <a href="#" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifyModal<?= $stagiaire->id ?>">Modifier</a>
                     <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>">Supprimer</a>
+                </div>
 
                 <!-- Modal for Modify with a unique ID for each stagiaire -->
                 <div class="modal fade" id="modifyModal<?= $stagiaire->id ?>" aria-hidden="true">
@@ -63,9 +68,13 @@ ob_start(); // from here we want to start recovering html below to $content vari
                             <label for="password">Mot de passe</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Saisir votre mot de passe" minlength="8" maxlength="20" required value="<?= $stagiaire->password ?>">
                         </div>
+                        <div class="form-group">
+                            <label for="commentaire">Commentaire</label>
+                            <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>">
+                            </div>
                         <div id="modify" class="form-group">
                             <input type="submit" class="btn btn-success my-2" value="Modifier" name="modifier">
-                            <a href="index.php" class="btn btn-secondary">Annuler</a>
+                            <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
                         </div>
                     </form>
                     </div>
@@ -86,7 +95,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                         Êtes-vous sûr de vouloir supprimer cet élément ?
                     </div>
                     <div class="modal-footer">
-                        <a href="index.php" class="btn btn-secondary">Annuler</a>
+                        <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
                         <a href="destroy.php?id=<?= $stagiaire->id ?>"  class="btn btn-danger">Supprimer</a>
                     </div>
                     </div>
