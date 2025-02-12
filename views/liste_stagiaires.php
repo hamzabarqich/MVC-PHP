@@ -106,9 +106,27 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 </td>
             </tr>
 
+            
+
         <?php endforeach; ?>
     </tbody>
 </table>
 
+<!--  It is used to display navigation links that allow users to navigate through pages of content, such as a list of items in a paginated table -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
 <?php $content = ob_get_clean();  // here we stop and recovered all html above to $content variable   ?>  
 <?php include_once 'views/layout.php'; ?>
+
