@@ -28,11 +28,12 @@ ob_start(); // from here we want to start recovering html below to $content vari
         </div>
         <div class="form-group">
             <label for="commentaire">Commentaire</label>
-            <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire">
+            <!-- This input is like the textarea below <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire"> -->
+            <textarea class="form-control" name="commentaire" id="message-text" placeholder="Saisir votre commentaire"></textarea>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary my-2" value="Ajouter" name="ajouter">
-            <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
+            <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-2">Annuler</a>
+            <input type="submit" class="btn btn-outline-primary btn-sm my-2 my-sm-2" value="Ajouter" name="ajouter">
         </div>
 
     </form>

@@ -9,4 +9,8 @@
     text-align:right;
 }
 
+.navbar-toggler-icon 
+{
+    background-color: #fff; /* Light color */
+}
   

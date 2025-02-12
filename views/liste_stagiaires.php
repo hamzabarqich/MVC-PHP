@@ -4,7 +4,7 @@ $title = "Liste des stagiaires";
 ob_start(); // from here we want to start recovering html below to $content variable
 ?>
 <hr>
-<div id="ajouter"><a href="index.php?action=create" class="btn btn-primary">Ajouter stagiaire</a></div>
+<div id="ajouter"><a href="index.php?action=create" class="btn btn-outline-primary btn-sm my-2 my-sm-0">Ajouter stagiaire</a></div>
 <br>
 <table class="table table-striped">
     <thead class="table-dark">
@@ -30,8 +30,8 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <td>
                 <!-- Your Delete and Modify Button that triggers the modal -->
                 <div class="d-flex flex-wrap gap-1 justify-content">
-                    <a href="#" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modifyModal<?= $stagiaire->id ?>">Modifier</a>
-                    <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>">Supprimer</a>
+                    <a href="#" class="btn btn-outline-success btn-sm my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#modifyModal<?= $stagiaire->id ?>">Modifier</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $stagiaire->id ?>">Supprimer</a>
                 </div>
 
                 <!-- Modal for Modify with a unique ID for each stagiaire -->
@@ -70,11 +70,12 @@ ob_start(); // from here we want to start recovering html below to $content vari
                         </div>
                         <div class="form-group">
                             <label for="commentaire">Commentaire</label>
-                            <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>">
+                            <!-- This input is like the textarea below <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"> -->
+                            <textarea class="form-control" name="commentaire" id="message-text" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"></textarea>
                             </div>
                         <div id="modify" class="form-group">
-                            <input type="submit" class="btn btn-success my-2" value="Modifier" name="modifier">
-                            <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
+                            <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
+                            <input type="submit" class="btn btn-outline-success btn-sm my-2 my-sm-2" value="Modifier" name="modifier">
                         </div>
                     </form>
                     </div>
@@ -95,8 +96,8 @@ ob_start(); // from here we want to start recovering html below to $content vari
                         Êtes-vous sûr de vouloir supprimer cet élément ?
                     </div>
                     <div class="modal-footer">
-                        <a href="index.php?action=list" class="btn btn-secondary">Annuler</a>
-                        <a href="destroy.php?id=<?= $stagiaire->id ?>"  class="btn btn-danger">Supprimer</a>
+                        <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
+                        <a href="destroy.php?id=<?= $stagiaire->id ?>"  class="btn btn-outline-danger btn-sm my-2 my-sm-0">Supprimer</a>
                     </div>
                     </div>
                 </div>

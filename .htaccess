@@ -1,0 +1,5 @@
+# This is a comment explaining the following rule
+RewriteEngine On
+
+# This rule redirects the root URL to index.php?action=list
+RewriteRule ^$ index.php?action=list [L]
