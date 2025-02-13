@@ -11,7 +11,7 @@
 <body class="d-flex flex-column min-vh-100">
 <?php require_once 'include/nav.php' ?>
     <div class="container mt-2 flex-grow-1">
-        <h2><?= $title ?></h2>
+        <h2 class="my-sm-5"><?= $title ?></h2>
         <?= $content ?>
     </div>
 

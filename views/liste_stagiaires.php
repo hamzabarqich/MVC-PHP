@@ -1,9 +1,9 @@
 <?php
-$title = "Liste des stagiaires";
+$title = "Liste des stagiaires" . "<hr>";
 
 ob_start(); // from here we want to start recovering html below to $content variable
 ?>
-<hr>
+
 <div id="ajouter"><a href="index.php?action=create" class="btn btn-outline-primary btn-sm my-2 my-sm-0">Ajouter stagiaire</a></div>
 <br>
 <table class="table table-striped">
@@ -38,7 +38,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <div class="modal fade" id="modifyModal<?= $stagiaire->id ?>" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-secondary text-white">
                         <h5 class="modal-title">Modification stagiaires</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -88,7 +88,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                 <div class="modal fade" id="deleteModal<?= $stagiaire->id ?>" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-secondary text-white">
                         <h5 class="modal-title">Confirmer la suppression</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -105,8 +105,6 @@ ob_start(); // from here we want to start recovering html below to $content vari
 
                 </td>
             </tr>
-
-            
 
         <?php endforeach; ?>
     </tbody>
