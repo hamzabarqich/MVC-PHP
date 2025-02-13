@@ -6,7 +6,8 @@ ob_start(); // from here we want to start recovering html below to $content vari
 ?>
 
 
-    <form action="store.php" method="post">
+    <form action="store.php" method="post" class="border p-3 rounded">
+
         <div class="form-group">
             <label for="nom"></label>
             <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom de famille">

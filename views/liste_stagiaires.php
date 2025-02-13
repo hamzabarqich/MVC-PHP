@@ -71,7 +71,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                         <div class="form-group">
                             <label for="commentaire">Commentaire</label>
                             <!-- This input is like the textarea below <input type="text" class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"> -->
-                            <textarea class="form-control" name="commentaire" id="message-text" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"></textarea>
+                            <textarea class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"></textarea>
                             </div>
                         <div id="modify" class="form-group">
                             <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
