@@ -4,7 +4,7 @@ Hello World !!
 ![image](https://github.com/user-attachments/assets/1355bd9b-3055-477b-ac71-6518c09dbd5b)
 
   - You will see how to creat list of trainees.
-    ![image](https://github.com/user-attachments/assets/56638a6c-5126-4e3e-8b53-fcbc253e24df)
+    ![image](https://github.com/user-attachments/assets/cad97796-099e-499f-b24b-073820fb0d6a)
 
   - You will see how to add trainees.
     ![image](https://github.com/user-attachments/assets/4b579a12-be06-4537-817d-175e1ee0cb07)
