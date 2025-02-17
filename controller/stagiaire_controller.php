@@ -15,7 +15,7 @@ function createAction()
 function storeAction()
 {
     $isCreated = create();
-    header('location: index.php?action=list');
+    header('location: /mvc-php/');   // This /mvc-php/ like index.php?action=list
 }
 
 function editAction()
@@ -29,7 +29,7 @@ function updateAction()
 {
     extract(array: $_POST);
     edit($id, $nom, $prenom, $age, $login, $password, $commentaire);
-    header('location: index.php?action=list');
+    header('location: /mvc-php/');   // This /mvc-php/ like index.php?action=list
 }
 
 function deleteAction()
@@ -42,5 +42,5 @@ function destroyAction()
 {
     $id = $_GET['id'];
     destroy($id);
-    header('location: index.php?action=list');
+    header('location: /mvc-php/');   // This /mvc-php/ like index.php?action=list
 }

@@ -15,6 +15,26 @@ if(isset($_GET['action']))
         case 'list':
             indexAction();
             break;
+        
+        case 'destroy':
+            destroyAction();
+            break;
+
+        case 'edit';
+            editAction();
+            break;
+
+        case 'store';
+            storeAction();
+            break;
+
+        case 'update';
+            updateAction();
+            break;
+
+        case 'delete';
+            deleteAction();
+            break;
     }
 }
 

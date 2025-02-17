@@ -1,11 +1,12 @@
 <?php
-$title = "Liste des stagiaires" . "<hr>";
-
+$titlehd = "Liste des stagiaires";
+$title = "Liste des stagiaires" . '<hr>';
 ob_start(); // from here we want to start recovering html below to $content variable
 ?>
 
 <div id="ajouter"><a href="index.php?action=create" class="btn btn-outline-primary btn-sm my-2 my-sm-0">Ajouter stagiaire</a></div>
 <br>
+<div class="table-responsive">
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>
@@ -44,7 +45,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                     </div>
 
                     <div class="modal-body">
-                    <form action="update.php" method="post">
+                    <form action="index.php?action=update" method="post">
                         <div class="form-group">
                             <input type="hidden" class="form-control" name="id" id="id"  value="<?= $stagiaire->id ?>">
                         </div>
@@ -74,7 +75,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
                             <textarea class="form-control" name="commentaire" id="commentaire" placeholder="Saisir votre commentaire" value="<?= $stagiaire->commentaire ?>"></textarea>
                             </div>
                         <div id="modify" class="form-group">
-                            <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
+                            <a href="/mvc-php/" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
                             <input type="submit" class="btn btn-outline-success btn-sm my-2 my-sm-2" value="Modifier" name="modifier">
                         </div>
                     </form>
@@ -96,8 +97,8 @@ ob_start(); // from here we want to start recovering html below to $content vari
                         Êtes-vous sûr de vouloir supprimer cet élément ?
                     </div>
                     <div class="modal-footer">
-                        <a href="index.php?action=list" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
-                        <a href="destroy.php?id=<?= $stagiaire->id ?>"  class="btn btn-outline-danger btn-sm my-2 my-sm-0">Supprimer</a>
+                        <a href="/mvc-php/" class="btn btn-outline-secondary btn-sm my-2 my-sm-0">Annuler</a>
+                        <a href="index.php?action=destroy&id=<?= $stagiaire->id ?>"  class="btn btn-outline-danger btn-sm my-2 my-sm-0">Supprimer</a>
                     </div>
                     </div>
                 </div>
@@ -109,6 +110,7 @@ ob_start(); // from here we want to start recovering html below to $content vari
         <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 
 <!--  It is used to display navigation links that allow users to navigate through pages of content, such as a list of items in a paginated table -->
 <nav aria-label="Page navigation example">
